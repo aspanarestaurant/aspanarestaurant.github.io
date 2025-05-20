@@ -14,17 +14,14 @@
     }
     header {
       text-align: center;
-      padding-bottom: 20px;
     }
     header img {
       width: 200px;
       height: auto;
-      margin-bottom: 10px;
     }
     h2 {
       margin-top: 30px;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 5px;
+      margin-bottom: 5px;
       color: #1f618d;
     }
     .menu-section {
@@ -44,50 +41,112 @@
     .price {
       font-weight: bold;
     }
+
+    .info-section {
+      max-width: 600px;
+      margin: 20px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid #ccc;
+    }
+
+    .info-section p {
+      margin: 5px 0;
+      font-size: 14px;
+      color: #1f618d;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .info-section img {
+      width: 20px;
+      margin-right: 4px;
+    }
+
+    .fees {
+      font-size: 16px;
+      color: #1f618d;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .note {
+      font-size: 12px;
+      color: #666;
+      font-weight: normal;
+      text-align: center;
+      margin: 30px 0px 1px 5px;
+    }
   </style>
 </head>
 <body>
   <header>
     <img src="Logo.PNG" alt="Aspana Restaurant Logosu">
   </header>
-
   <div class="menu-section">
-
-    <h2>Ara Sıcaklar</h2>
+    <h2 style="margin-top: 10px;">Ara Sıcaklar</h2>
     <ul>
-      <li><span>Karides Güveç</span><span class="price">₺120</span></li>
-      <li><span>Kalamar Tava</span><span class="price">₺110</span></li>
-      <li><span>Patates Kızartması</span><span class="price">₺50</span></li>
+      <li><span>Kalamar (Porsiyon)</span><span class="price">500₺</span></li>
+      <li><span>Karides (Porsiyon)</span><span class="price">500₺</span></li>
+      <li><span>Patates Kızartması</span><span class="price">200₺</span></li>
     </ul>
-
-    <h2>Ana Yemekler</h2>
+    <div style="display: flex; align-items: center;">
+      <h2>Ana Yemekler </h2>
+      <span class="note">(Fiyatlar günlük değişmektedir)</span>
+    </div>
     <ul>
-      <li><span>Izgara Levrek</span><span class="price">₺220</span></li>
-      <li><span>Fırında Çipura</span><span class="price">₺210</span></li>
-      <li><span>Hamsi Tava</span><span class="price">₺160</span></li>
+      <li><span>İri Levrek (1 kg)</span><span class="price">1250₺</span></li>
+      <li><span>Levrek (1 kg)</span><span class="price">1000₺</span></li>
+      <li><span>Çupra (1 kg)</span><span class="price">1000₺</span></li>
+      <li><span>Lagos (1 kg)</span><span class="price">-</span></li>      
+      <li><span>Mezgit (1 kg)</span><span class="price">-</span></li>      
+      <li><span>Patlak Göz (1 kg)</span><span class="price">-</span></li>      
+      <li><span>Barbunya (1 kg)</span><span class="price">-</span></li>      
+      <li><span>Keserbaş (Ext) (1 kg)</span><span class="price">-</span></li>      
+      <li><span>Keserbaş (1 kg)</span><span class="price">-</span></li>      
+      <li><span>Dil (1 kg)</span><span class="price">-</span></li>      
     </ul>
-
     <h2>Mezeler</h2>
     <ul>
-      <li><span>Humus</span><span class="price">₺45</span></li>
-      <li><span>Haydari</span><span class="price">₺40</span></li>
-      <li><span>Şakşuka</span><span class="price">₺50</span></li>
-      <li><span>Patlıcan Ezme</span><span class="price">₺50</span></li>
+      <li><span>Humus</span><span class="price">150₺</span></li>
+      <li><span>Humus (Tereyağlı)</span><span class="price">200₺</span></li>
+      <li><span>Süzme Yoğurt</span><span class="price">150₺</span></li>
+      <li><span>Acılı Zengi</span><span class="price">150₺</span></li>
+      <li><span>Patlıcan Ezme</span><span class="price">150₺</span></li>
+      <li><span>Zeytin Salata</span><span class="price">150₺</span></li>
+      <li><span>Patlıcan Yoğurtlama</span><span class="price">150₺</span></li>
+      <li><span>Biber Yoğurtlama</span><span class="price">150₺</span></li>
+      <li><span>Cacık</span><span class="price">150₺</span></li>
+      <li><span>Biber Ezme</span><span class="price">180₺</span></li>
+      <li><span>Çökelek</span><span class="price">150₺</span></li>
+      <li><span>Söğüş Peynir</span><span class="price">250₺</span></li>
+      <li><span>Patlıcan Kızartması</span><span class="price">150₺</span></li>
     </ul>
-
     <h2>Salatalar</h2>
     <ul>
-      <li><span>Mevsim Salata</span><span class="price">₺60</span></li>
-      <li><span>Roka Salatası</span><span class="price">₺55</span></li>
+      <li><span>Mevsim Salata</span><span class="price">200₺</span></li>
+      <li><span>Çoban Salatası</span><span class="price">250₺</span></li>
+      <li><span>Mevsim Salata</span><span class="price">200₺</span></li>
     </ul>
-
     <h2>İçecekler</h2>
     <ul>
-      <li><span>Rakı (Tek / Duble)</span><span class="price">₺100 / ₺180</span></li>
-      <li><span>Tuborg</span><span class="price">₺80</span></li>
-      <li><span>Carlsberg</span><span class="price">₺85</span></li>
+      <li><span>Bira Çeşitleri</span><span class="price">175₺</span></li>
+      <li><span>Kola</span><span class="price">75₺</span></li>
+      <li><span>Soda</span><span class="price">30₺</span></li>
+      <li><span>Meyve Suyu</span><span class="price">30₺</span></li>
+      <li><span>Kapalı Su (1.5 lt)</span><span class="price">30₺</span></li>
     </ul>
+  </div>
+  <div class="fees">
+    <p>Servis (Kişi Başı): 30₺</p>
+    <p>Kuver (Kişi Başı): 125₺</p>
+  </div>
 
+  <div class="info-section">
+    <p>📍 <a href="https://g.co/kgs/GZFJxyL" target="_blank" style="color: #1f618d; text-decoration: none;">Deniz, Mehmet Aslan Cd, 31800 Samandağ/Hatay</a></p>
+    <p>📞 +90 535 510 11 97</p>
+    <p> <img src="instagram.png" alt="instagram"><a href="https://instagram.com/aspanarestaurant1968" target="_blank" style="color: #1f618d; text-decoration: none;"> aspanarestaurant1968</a></p>
   </div>
 </body>
 </html>
