@@ -4,6 +4,61 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Aspana Restaurant Menü</title>
+
+  <!-- Fiyatlar buradan değiştirilecek -->
+  <script>
+    window.prices = {
+      "araSicaklar": {
+        "Kalamar (Porsiyon)": "500₺",
+        "Karides (Porsiyon)": "500₺",
+        "Patates Kızartması": "200₺"
+      },
+      "anaYemekler": {
+        "İri Levrek (1 kg)": "1400₺",
+        "Levrek (1 kg)": "1100₺",
+        "Çupra (1 kg)": "1100₺",
+        "Lagos (1 kg)": "-",
+        "Mezgit (1 kg)": "-",
+        "Patlak Göz (1 kg)": "-",
+        "Barbunya (1 kg)": "-",
+        "Keserbaş (Ext) (1 kg)": "-",
+        "Keserbaş (1 kg)": "-",
+        "Dil (1 kg)": "-"
+      },
+      "mezeler": {
+        "Humus": "175₺",
+        "Humus (Tereyağlı)": "200₺",
+        "Süzme Yoğurt": "175₺",
+        "Acılı Zengi": "175₺",
+        "Patlıcan Ezme": "175₺",
+        "Zeytin Salata": "175₺",
+        "Patlıcan Yoğurtlama": "175₺",
+        "Biber Yoğurtlama": "175₺",
+        "Cacık": "175₺",
+        "Biber Ezme": "200₺",
+        "Çökelek": "175₺",
+        "Söğüş Peynir": "250₺",
+        "Patlıcan Kızartması": "175₺"
+      },
+      "salatalar": {
+        "Mevsim Salata": "200₺",
+        "Çoban Salatası": "250₺",
+        "Roka Salatası": "200₺"
+      },
+      "icecekler": {
+        "Bira Çeşitleri": "175₺",
+        "Kola": "75₺",
+        "Soda": "30₺",
+        "Meyve Suyu": "30₺",
+        "Kapalı Su (1.5 lt)": "30₺"
+      },
+      "ucretler": {
+        "Servis (Kişi Başı)": "30₺",
+        "Kuver (Kişi Başı)": "125₺"
+      }
+    };
+  </script>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -12,141 +67,76 @@
       margin: 0;
       padding: 20px;
     }
-    header {
-      text-align: center;
-    }
-    header img {
-      width: 200px;
-      height: auto;
-    }
-    h2 {
-      margin-top: 30px;
-      margin-bottom: 5px;
-      color: #1f618d;
-    }
-    .menu-section {
-      max-width: 600px;
-      margin: auto;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      display: flex;
-      justify-content: space-between;
-      padding: 8px 0;
-      border-bottom: 1px dashed #bbb;
-    }
-    .price {
-      font-weight: bold;
-    }
-
-    .info-section {
-      max-width: 600px;
-      margin: 20px auto 0;
-      padding-top: 20px;
-      border-top: 1px solid #ccc;
-    }
-
-    .info-section p {
-      margin: 5px 0;
-      font-size: 14px;
-      color: #1f618d;
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .info-section img {
-      width: 20px;
-      margin-right: 4px;
-    }
-
-    .fees {
-      font-size: 16px;
-      color: #1f618d;
-      text-align: center;
-      margin-top: 40px;
-    }
-
-    .note {
-      font-size: 12px;
-      color: #666;
-      font-weight: normal;
-      text-align: center;
-      margin: 30px 0px 1px 5px;
-    }
+    header { text-align: center; }
+    header img { width: 200px; height: auto; }
+    h2 { margin-top: 30px; margin-bottom: 5px; color: #1f618d; }
+    .menu-section { max-width: 600px; margin: auto; }
+    ul { list-style: none; padding: 0; }
+    li { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px dashed #bbb; }
+    .price { font-weight: bold; }
+    .info-section { max-width: 600px; margin: 20px auto 0; padding-top: 20px; border-top: 1px solid #ccc; }
+    .info-section p { margin: 5px 0; font-size: 14px; color: #1f618d; text-align: center; display: flex; align-items: center; justify-content: center; }
+    .info-section img { width: 20px; margin-right: 4px; }
+    .fees { font-size: 16px; color: #1f618d; text-align: center; margin-top: 40px; }
+    .note { font-size: 12px; color: #666; font-weight: normal; text-align: center; margin: 30px 0px 1px 5px; }
   </style>
 </head>
 <body>
   <header>
     <img src="Logo.PNG" alt="Aspana Restaurant Logosu">
   </header>
+
   <div class="menu-section">
     <h2 style="margin-top: 10px;">Ara Sıcaklar</h2>
-    <ul>
-      <li><span>Kalamar (Porsiyon)</span><span class="price">500₺</span></li>
-      <li><span>Karides (Porsiyon)</span><span class="price">500₺</span></li>
-      <li><span>Patates Kızartması</span><span class="price">200₺</span></li>
-    </ul>
+    <ul id="ara-sicaklar"></ul>
+
     <div style="display: flex; align-items: center;">
       <h2>Ana Yemekler </h2>
       <span class="note">(Fiyatlar günlük değişmektedir)</span>
     </div>
-    <ul>
-      <li><span>İri Levrek (1 kg)</span><span class="price">1400₺</span></li>
-      <li><span>Levrek (1 kg)</span><span class="price">1100₺</span></li>
-      <li><span>Çupra (1 kg)</span><span class="price">1100₺</span></li>
-      <li><span>Lagos (1 kg)</span><span class="price">-</span></li>      
-      <li><span>Mezgit (1 kg)</span><span class="price">-</span></li>      
-      <li><span>Patlak Göz (1 kg)</span><span class="price">-</span></li>      
-      <li><span>Barbunya (1 kg)</span><span class="price">-</span></li>      
-      <li><span>Keserbaş (Ext) (1 kg)</span><span class="price">-</span></li>      
-      <li><span>Keserbaş (1 kg)</span><span class="price">-</span></li>      
-      <li><span>Dil (1 kg)</span><span class="price">-</span></li>      
-    </ul>
+    <ul id="ana-yemekler"></ul>
+
     <h2>Mezeler</h2>
-    <ul>
-      <li><span>Humus</span><span class="price">175₺</span></li>
-      <li><span>Humus (Tereyağlı)</span><span class="price">200₺</span></li>
-      <li><span>Süzme Yoğurt</span><span class="price">175₺</span></li>
-      <li><span>Acılı Zengi</span><span class="price">175₺</span></li>
-      <li><span>Patlıcan Ezme</span><span class="price">175₺</span></li>
-      <li><span>Zeytin Salata</span><span class="price">175₺</span></li>
-      <li><span>Patlıcan Yoğurtlama</span><span class="price">175₺</span></li>
-      <li><span>Biber Yoğurtlama</span><span class="price">175₺</span></li>
-      <li><span>Cacık</span><span class="price">175₺</span></li>
-      <li><span>Biber Ezme</span><span class="price">200₺</span></li>
-      <li><span>Çökelek</span><span class="price">175₺</span></li>
-      <li><span>Söğüş Peynir</span><span class="price">250₺</span></li>
-      <li><span>Patlıcan Kızartması</span><span class="price">175₺</span></li>
-    </ul>
+    <ul id="mezeler"></ul>
+
     <h2>Salatalar</h2>
-    <ul>
-      <li><span>Mevsim Salata</span><span class="price">200₺</span></li>
-      <li><span>Çoban Salatası</span><span class="price">250₺</span></li>
-      <li><span>Roka Salatası</span><span class="price">200₺</span></li>
-    </ul>
+    <ul id="salatalar"></ul>
+
     <h2>İçecekler</h2>
-    <ul>
-      <li><span>Bira Çeşitleri</span><span class="price">175₺</span></li>
-      <li><span>Kola</span><span class="price">75₺</span></li>
-      <li><span>Soda</span><span class="price">30₺</span></li>
-      <li><span>Meyve Suyu</span><span class="price">30₺</span></li>
-      <li><span>Kapalı Su (1.5 lt)</span><span class="price">30₺</span></li>
-    </ul>
+    <ul id="icecekler"></ul>
   </div>
-  <div class="fees">
-    <p>Servis (Kişi Başı): 30₺</p>
-    <p>Kuver (Kişi Başı): 125₺</p>
-  </div>
+
+  <div class="fees" id="ucretler"></div>
 
   <div class="info-section">
     <p>📍 <a href="https://g.co/kgs/GZFJxyL" target="_blank" style="color: #1f618d; text-decoration: none;">Deniz, Mehmet Aslan Cd, 31800 Samandağ/Hatay</a></p>
     <p>📞  <a href="tel:+905355101197" style="text-decoration: none; color: #1f618d;">+90 535 510 11 97</a></p>
     <p> <img src="instagram.png" alt="instagram"><a href="https://instagram.com/aspanarestaurant1968" target="_blank" style="color: #1f618d; text-decoration: none;"> aspanarestaurant1968</a></p>
   </div>
+
+  <script>
+    function renderMenu(sectionId, items) {
+      const ul = document.getElementById(sectionId);
+      ul.innerHTML = "";
+      for (const [name, price] of Object.entries(items)) {
+        const li = document.createElement("li");
+        li.innerHTML = `<span>${name}</span><span class="price">${price}</span>`;
+        ul.appendChild(li);
+      }
+    }
+
+    renderMenu("ara-sicaklar", window.prices.araSicaklar);
+    renderMenu("ana-yemekler", window.prices.anaYemekler);
+    renderMenu("mezeler", window.prices.mezeler);
+    renderMenu("salatalar", window.prices.salatalar);
+    renderMenu("icecekler", window.prices.icecekler);
+
+    const feesDiv = document.getElementById("ucretler");
+    for (const [name, price] of Object.entries(window.prices.ucretler)) {
+      const p = document.createElement("p");
+      p.textContent = `${name}: ${price}`;
+      feesDiv.appendChild(p);
+    }
+  </script>
 </body>
 </html>
